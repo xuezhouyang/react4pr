@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Inter Variable', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: radial-gradient(circle at top, rgba(127, 90, 240, 0.24), transparent 55%),
+    radial-gradient(circle at bottom, rgba(44, 177, 188, 0.18), transparent 45%);
+  filter: blur(40px);
+}
+
+.glass-panel {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-glow;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #7f5af0, #2cb1bc);
+  -webkit-background-clip: text;
+  color: transparent;
+}
